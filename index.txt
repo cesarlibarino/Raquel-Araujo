@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>Clube Raquel Nutri</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#f8f7f4;
+--dark:#083f3d;
+--dark2:#0f5a56;
+--champ:#d7c4ab;
+--text:#26302f;
+--white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{width:min(1180px,92%);margin:auto}
+section{padding:90px 0}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+h1{font-size:clamp(3rem,7vw,5.8rem);line-height:0.95}
+h2{font-size:clamp(2.2rem,5vw,4rem)}
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#062f2e,#0f5a56)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.hero *{color:white}
+.badge{display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.3);border-radius:50px}
+.btn{display:inline-block;padding:18px 34px;background:var(--champ);color:#143231;text-decoration:none;border-radius:12px;font-weight:700}
+.mockup{background:rgba(255,255,255,.08);backdrop-filter:blur(8px);padding:40px;border-radius:28px;text-align:center}
+.mockup img{width:100%;border-radius:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card{background:white;padding:30px;border-radius:24px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
+.dark{background:var(--dark);color:white}
+.dark p{color:#d9e6e4}
+.center{text-align:center}
+.price{font-size:4rem;font-weight:700;color:var(--champ)}
+.faq details{background:white;margin:12px 0;padding:20px;border-radius:16px}
+.cta{background:linear-gradient(135deg,var(--dark),var(--dark2));color:white}
+footer{padding:40px;text-align:center}
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.hero{min-height:auto;padding:80px 0}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<span class="badge">Comunidade Premium de Emagrecimento</span>
+<h1>Pare de recomeçar toda segunda-feira.</h1>
+<p style="font-size:1.2rem;margin:24px 0">
+Tenha acompanhamento, direcionamento e uma comunidade que ajuda você a construir resultados possíveis de manter.
+</p>
+<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">QUERO FAZER PARTE</a>
+</div>
+<div class="mockup">
+<img src="clube-raquel.jpg" alt="Clube Raquel Nutri">
+</div>
+</div>
+</section>
+
+<section>
+<div class="container center">
+<h2>Você não precisa de mais uma dieta.</h2>
+<p>Muitas mulheres sabem exatamente o que deveriam fazer. O problema é manter a constância sem apoio, sem direção e sem alguém para caminhar junto.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="cards">
+<div class="card"><h3>Recomeços constantes</h3><p>Começa motivada e para depois de alguns dias.</p></div>
+<div class="card"><h3>Falta de suporte</h3><p>Sozinha, tudo fica mais difícil.</p></div>
+<div class="card"><h3>Excesso de informação</h3><p>Cada semana surge uma nova dieta.</p></div>
+<div class="card"><h3>Resultados temporários</h3><p>Perde peso e depois recupera.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark">
+<div class="container center">
+<h2>O Clube Raquel Nutri</h2>
+<p>Um espaço pensado para mulheres que desejam emagrecer com leveza, orientação e acompanhamento contínuo.</p>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="cards">
+<div class="card"><h3>Comunidade Exclusiva</h3><p>Ambiente de apoio e pertencimento.</p></div>
+<div class="card"><h3>Conteúdo Recorrente</h3><p>Novas orientações e estratégias.</p></div>
+<div class="card"><h3>Mais Constância</h3><p>Menos efeito sanfona.</p></div>
+<div class="card"><h3>Estilo de Vida</h3><p>Mudanças sustentáveis e possíveis.</p></div>
+<div class="card"><h3>Emagrecimento Inteligente</h3><p>Sem extremismos.</p></div>
+<div class="card"><h3>Acompanhamento</h3><p>Você não caminha sozinha.</p></div>
+</div>
+</div>
+</section>
+
+<section class="dark">
+<div class="container center">
+<h2>Sobre Raquel Araújo</h2>
+<p>Nutricionista que construiu uma marca baseada em acolhimento, constância e transformação sustentável. O foco não está em soluções rápidas, mas em resultados que façam sentido para a vida real.</p>
+</div>
+</section>
+
+<section>
+<div class="container center">
+<h2>O que as alunas procuram</h2>
+<div class="cards" style="margin-top:30px">
+<div class="card">Mais confiança nas escolhas.</div>
+<div class="card">Menos culpa com a alimentação.</div>
+<div class="card">Mais consistência.</div>
+<div class="card">Resultados duradouros.</div>
+</div>
+</div>
+</section>
+
+<section class="dark">
+<div class="container center">
+<h2>Faça parte hoje</h2>
+<p>Acesso à comunidade Clube Raquel Nutri</p>
+<div class="price">4x R$16,31</div>
+<p>ou R$59,90 à vista</p><br>
+<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">ENTRAR NO CLUBE</a>
+</div>
+</section>
+
+<section class="faq">
+<div class="container">
+<h2 class="center">Perguntas Frequentes</h2>
+<details><summary>É para iniciantes?</summary><p>Sim.</p></details>
+<details><summary>Quanto custa?</summary><p>4x de R$16,31 ou R$59,90 à vista.</p></details>
+<details><summary>Recebo acesso imediato?</summary><p>Após confirmação do pagamento.</p></details>
+<details><summary>Preciso seguir dieta restritiva?</summary><p>Não.</p></details>
+</div>
+</section>
+
+<section class="cta">
+<div class="container center">
+<h2>Seu próximo recomeço pode ser o último.</h2>
+<p>Construa resultados possíveis de manter.</p><br>
+<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">QUERO ENTRAR AGORA</a>
+</div>
+</section>
+
+<footer>Clube Raquel Nutri</footer>
+
+</body>
+</html>
