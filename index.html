@@ -1,152 +1,1335 @@
 <!DOCTYPE html>
-<html lang='pt-BR'>
+<html lang="pt-BR">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>Clube Raquel Nutri</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
---bg:#f8f7f4;
---dark:#083f3d;
---dark2:#0f5a56;
---champ:#d7c4ab;
---text:#26302f;
---white:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-.container{width:min(1180px,92%);margin:auto}
-section{padding:90px 0}
-h1,h2,h3{font-family:"Cormorant Garamond",serif}
-h1{font-size:clamp(3rem,7vw,5.8rem);line-height:0.95}
-h2{font-size:clamp(2.2rem,5vw,4rem)}
-.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#062f2e,#0f5a56)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.hero *{color:white}
-.badge{display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.3);border-radius:50px}
-.btn{display:inline-block;padding:18px 34px;background:var(--champ);color:#143231;text-decoration:none;border-radius:12px;font-weight:700}
-.mockup{background:rgba(255,255,255,.08);backdrop-filter:blur(8px);padding:40px;border-radius:28px;text-align:center}
-.mockup img{width:100%;border-radius:20px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.card{background:white;padding:30px;border-radius:24px;box-shadow:0 15px 40px rgba(0,0,0,.06)}
-.dark{background:var(--dark);color:white}
-.dark p{color:#d9e6e4}
-.center{text-align:center}
-.price{font-size:4rem;font-weight:700;color:var(--champ)}
-.faq details{background:white;margin:12px 0;padding:20px;border-radius:16px}
-.cta{background:linear-gradient(135deg,var(--dark),var(--dark2));color:white}
-footer{padding:40px;text-align:center}
-@media(max-width:900px){
-.hero-grid{grid-template-columns:1fr}
-.hero{min-height:auto;padding:80px 0}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Clube Raquel Nutri | Comunidade Premium de Emagrecimento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#557a67;
+      --green-dark:#123f3a;
+      --green-soft:#edf6f1;
+      --champagne:#d7c4ab;
+      --champagne-soft:#f7efe5;
+      --cream:#fffaf4;
+      --white:#ffffff;
+      --text:#252322;
+      --muted:#6d6864;
+      --line:rgba(18,63,58,.13);
+      --shadow:0 28px 70px rgba(18,63,58,.14);
+      --serif:'Fraunces', serif;
+      --sans:'Inter', sans-serif;
+      --transition:all .35s cubic-bezier(.25,1,.5,1);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:var(--sans);
+      background:var(--cream);
+      color:var(--text);
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:100%;
+      max-width:1160px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    section{
+      position:relative;
+      padding:88px 0;
+      overflow:hidden;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      background:var(--green-dark);
+      color:var(--white);
+      border:1px solid var(--green-dark);
+      padding:18px 30px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:1.1px;
+      font-size:13px;
+      font-weight:900;
+      transition:var(--transition);
+      box-shadow:0 18px 42px rgba(18,63,58,.24);
+    }
+
+    .btn:hover{
+      transform:translateY(-4px);
+      background:var(--green);
+      border-color:var(--green);
+      box-shadow:0 24px 52px rgba(18,63,58,.30);
+    }
+
+    .btn-secondary{
+      background:var(--white);
+      color:var(--green-dark);
+      border-color:rgba(18,63,58,.14);
+      box-shadow:none;
+    }
+
+    .btn-secondary:hover{
+      background:var(--green-soft);
+      color:var(--green-dark);
+      box-shadow:none;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--green-dark);
+      background:var(--green-soft);
+      border:1px solid rgba(18,63,58,.15);
+      padding:11px 16px;
+      border-radius:999px;
+      text-transform:uppercase;
+      letter-spacing:2.4px;
+      font-size:10px;
+      font-weight:900;
+    }
+
+    .tag::before{
+      content:"";
+      width:7px;
+      height:7px;
+      background:var(--champagne);
+      border-radius:999px;
+    }
+
+    .title{
+      font-family:var(--serif);
+      color:var(--green-dark);
+      font-size:56px;
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      font-weight:800;
+    }
+
+    .title span{
+      color:var(--green);
+    }
+
+    .subtitle{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.7;
+      max-width:660px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:28px;
+      box-shadow:0 20px 55px rgba(18,63,58,.08);
+      backdrop-filter:blur(12px);
+      transition:var(--transition);
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow);
+      border-color:rgba(215,196,171,.55);
+    }
+
+    .blob{
+      position:absolute;
+      width:430px;
+      height:430px;
+      border-radius:999px;
+      background:rgba(215,196,171,.26);
+      filter:blur(95px);
+      pointer-events:none;
+    }
+
+    .blob.green{
+      background:rgba(85,122,103,.20);
+    }
+
+    .center{
+      text-align:center;
+      max-width:850px;
+      margin:0 auto 54px;
+    }
+
+    .center .title{
+      margin-top:20px;
+    }
+
+    .center .subtitle{
+      margin:20px auto 0;
+    }
+
+    header{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:20;
+      padding:24px 0;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .brand{
+      font-weight:900;
+      color:white;
+      letter-spacing:-.5px;
+      font-size:18px;
+    }
+
+    .brand span{
+      color:var(--champagne);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      font-size:13px;
+      color:rgba(255,255,255,.72);
+      font-weight:800;
+    }
+
+    .nav-links a:hover{
+      color:white;
+    }
+
+    .nav-cta{
+      background:var(--champagne);
+      color:var(--green-dark);
+      padding:12px 18px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:122px 0 72px;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(215,196,171,.28), transparent 30%),
+        radial-gradient(circle at 16% 78%, rgba(85,122,103,.25), transparent 34%),
+        linear-gradient(135deg,#062f2e 0%, #0f5a56 100%);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:72px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-family:var(--serif);
+      font-size:68px;
+      line-height:.98;
+      letter-spacing:-2px;
+      color:white;
+      font-weight:800;
+      margin-top:22px;
+      max-width:760px;
+    }
+
+    .hero h1 span{
+      color:var(--champagne);
+    }
+
+    .hero p{
+      color:rgba(255,255,255,.78);
+      font-size:18px;
+      line-height:1.7;
+      margin-top:24px;
+      max-width:640px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    .hero .btn{
+      background:var(--champagne);
+      border-color:var(--champagne);
+      color:var(--green-dark);
+    }
+
+    .hero .btn:hover{
+      background:white;
+      border-color:white;
+    }
+
+    .hero .btn-secondary{
+      background:rgba(255,255,255,.08);
+      color:white;
+      border-color:rgba(255,255,255,.18);
+    }
+
+    .hero-proof{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:34px;
+      max-width:670px;
+    }
+
+    .proof{
+      padding:18px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:22px;
+      backdrop-filter:blur(10px);
+    }
+
+    .proof strong{
+      color:white;
+      display:block;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .proof span{
+      color:rgba(255,255,255,.68);
+      font-size:12.5px;
+      line-height:1.4;
+      display:block;
+    }
+
+    .product-wrap{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .product-card{
+      position:relative;
+      width:100%;
+      max-width:440px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:34px;
+      box-shadow:0 34px 85px rgba(0,0,0,.20);
+      overflow:hidden;
+      padding:18px;
+      z-index:3;
+      backdrop-filter:blur(10px);
+    }
+
+    .product-card img{
+      width:100%;
+      border-radius:24px;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    .floating-card{
+      position:absolute;
+      right:-20px;
+      bottom:34px;
+      z-index:5;
+      background:white;
+      color:var(--green-dark);
+      max-width:285px;
+      border-radius:28px;
+      padding:22px;
+      box-shadow:0 22px 60px rgba(0,0,0,.18);
+    }
+
+    .floating-card strong{
+      display:block;
+      font-family:var(--serif);
+      font-size:25px;
+      line-height:1.05;
+      margin-bottom:8px;
+      color:var(--green-dark);
+    }
+
+    .floating-card span{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .pain-card{
+      padding:34px;
+    }
+
+    .icon{
+      width:52px;
+      height:52px;
+      background:var(--champagne-soft);
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:25px;
+      margin-bottom:24px;
+    }
+
+    .pain-card h3{
+      font-family:var(--serif);
+      color:var(--green-dark);
+      font-size:26px;
+      line-height:1.12;
+      margin-bottom:14px;
+    }
+
+    .pain-card p{
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+    }
+
+    .section-soft{
+      background:linear-gradient(180deg,var(--green-soft),#fffaf4);
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:74px;
+      align-items:center;
+    }
+
+    .image-box{
+      position:relative;
+      background:white;
+      border-radius:34px;
+      padding:18px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+
+    .image-box::after{
+      content:"";
+      position:absolute;
+      inset:28px -24px -24px 28px;
+      border:1px solid rgba(215,196,171,.75);
+      border-radius:34px;
+      z-index:-1;
+    }
+
+    .image-box img{
+      width:100%;
+      border-radius:26px;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    .copy .title{
+      margin-top:20px;
+    }
+
+    .copy .subtitle{
+      margin-top:20px;
+    }
+
+    .bullets{
+      display:grid;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .bullet{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .bullet b{
+      color:var(--green);
+      flex-shrink:0;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      margin-top:56px;
+    }
+
+    .step{
+      padding:28px;
+    }
+
+    .step strong{
+      font-family:var(--serif);
+      color:var(--green);
+      font-size:38px;
+      line-height:1;
+      display:block;
+      margin-bottom:18px;
+    }
+
+    .step h3{
+      color:var(--green-dark);
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .dark-section{
+      background:var(--green-dark);
+      color:white;
+    }
+
+    .dark-section .title{
+      color:white;
+    }
+
+    .dark-section .title span{
+      color:var(--champagne);
+    }
+
+    .dark-section .subtitle{
+      color:rgba(255,255,255,.74);
+    }
+
+    .dark-section .tag{
+      background:rgba(255,255,255,.10);
+      color:white;
+      border-color:rgba(255,255,255,.16);
+    }
+
+    .dark-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .dark-card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:26px;
+      padding:26px;
+    }
+
+    .dark-card h3{
+      font-size:20px;
+      margin-bottom:10px;
+      color:#f2dfc5;
+    }
+
+    .dark-card p{
+      color:rgba(255,255,255,.70);
+      font-size:14.5px;
+      line-height:1.6;
+    }
+
+    .price-box{
+      max-width:920px;
+      margin:0 auto;
+      background:white;
+      border-radius:38px;
+      padding:50px 38px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+      text-align:center;
+    }
+
+    .price{
+      font-family:var(--serif);
+      font-size:72px;
+      line-height:1;
+      color:var(--green-dark);
+      font-weight:800;
+      margin-top:22px;
+    }
+
+    .price small{
+      font-family:var(--sans);
+      display:block;
+      font-size:18px;
+      color:var(--muted);
+      font-weight:700;
+      margin-top:10px;
+    }
+
+    .price-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .price-box .btn{
+      margin-top:34px;
+    }
+
+    .cta{
+      background:
+        radial-gradient(circle at 50% 0%, rgba(215,196,171,.34), transparent 35%),
+        linear-gradient(180deg,#f1f8f4 0%, #fffaf4 100%);
+    }
+
+    .cta-box{
+      max-width:920px;
+      margin:0 auto;
+      background:var(--green-dark);
+      border-radius:38px;
+      padding:54px 38px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.10);
+      text-align:center;
+      color:white;
+    }
+
+    .cta-box .title{
+      color:white;
+      margin-top:20px;
+    }
+
+    .cta-box .title span{
+      color:var(--champagne);
+    }
+
+    .cta-box .subtitle{
+      color:rgba(255,255,255,.76);
+      margin:22px auto 0;
+    }
+
+    .cta-box .btn{
+      margin-top:34px;
+      background:var(--champagne);
+      color:var(--green-dark);
+      border-color:var(--champagne);
+    }
+
+    .cta-note{
+      margin-top:16px;
+      color:rgba(255,255,255,.62);
+      font-size:13px;
+    }
+
+    .faq{
+      max-width:860px;
+      margin:0 auto;
+    }
+
+    details{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:22px;
+      margin-bottom:14px;
+      overflow:hidden;
+    }
+
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:22px 24px;
+      font-weight:900;
+      color:var(--green-dark);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content:"+";
+      color:var(--green);
+      font-size:24px;
+      line-height:1;
+    }
+
+    details[open] summary::after{
+      content:"−";
+    }
+
+    details p{
+      padding:0 24px 24px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14.5px;
+    }
+
+    footer{
+      background:#062f2e;
+      color:rgba(255,255,255,.62);
+      padding:50px 0 34px;
+      font-size:13px;
+    }
+
+    .footer-grid{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      padding-bottom:28px;
+      margin-bottom:24px;
+    }
+
+    .footer-brand{
+      color:white;
+      font-weight:900;
+      font-size:19px;
+      margin-bottom:8px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a:hover{
+      color:white;
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      font-size:12px;
+      color:rgba(255,255,255,.48);
+    }
+
+    .credit{
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      font-weight:900;
+      color:rgba(255,255,255,.72);
+    }
+
+    @media(max-width:1024px){
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        min-height:auto;
+        text-align:center;
+        padding-top:112px;
+      }
+
+      .hero-grid,
+      .split{
+        grid-template-columns:1fr;
+        gap:48px;
+      }
+
+      .hero p,
+      .hero h1,
+      .subtitle{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .hero-actions{
+        justify-content:center;
+      }
+
+      .hero-proof{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .product-wrap{
+        order:-1;
+      }
+
+      .product-card{
+        max-width:360px;
+      }
+
+      .floating-card{
+        position:relative;
+        right:auto;
+        bottom:auto;
+        margin:-34px auto 0;
+        text-align:center;
+      }
+
+      .cards,
+      .steps{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .title{
+        font-size:46px;
+      }
+
+      .hero h1{
+        font-size:54px;
+      }
+
+      .image-box{
+        max-width:420px;
+        margin:0 auto;
+      }
+
+      .image-box::after{
+        display:none;
+      }
+    }
+
+    @media(max-width:768px){
+      .container{
+        padding:0 20px;
+      }
+
+      section{
+        padding:68px 0;
+      }
+
+      header{
+        padding:18px 0;
+      }
+
+      .brand{
+        font-size:16px;
+      }
+
+      .nav-cta{
+        padding:10px 13px;
+        font-size:10px;
+      }
+
+      .hero{
+        padding-top:94px;
+        padding-bottom:58px;
+      }
+
+      .product-card{
+        max-width:300px;
+        padding:10px;
+      }
+
+      .hero h1{
+        font-size:42px;
+        letter-spacing:-1.2px;
+      }
+
+      .title{
+        font-size:37px;
+        letter-spacing:-.8px;
+      }
+
+      .subtitle,
+      .hero p{
+        font-size:15.5px;
+      }
+
+      .btn{
+        width:100%;
+        padding:17px 18px;
+        font-size:11px;
+      }
+
+      .hero-proof,
+      .cards,
+      .steps,
+      .dark-grid{
+        grid-template-columns:1fr;
+      }
+
+      .price{
+        font-size:54px;
+      }
+
+      .price-box,
+      .cta-box{
+        padding:38px 22px;
+        border-radius:30px;
+      }
+
+      .footer-grid,
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .footer-links{
+        justify-content:center;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<section class="hero">
-<div class="container hero-grid">
-<div>
-<span class="badge">Comunidade Premium de Emagrecimento</span>
-<h1>Pare de recomeçar toda segunda-feira.</h1>
-<p style="font-size:1.2rem;margin:24px 0">
-Tenha acompanhamento, direcionamento e uma comunidade que ajuda você a construir resultados possíveis de manter.
-</p>
-<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">QUERO FAZER PARTE</a>
-</div>
-<div class="mockup">
-<img src="clube-raquel.jpg" alt="Clube Raquel Nutri">
-</div>
-</div>
-</section>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a href="#inicio" class="brand">Clube Raquel<span> Nutri</span></a>
 
-<section>
-<div class="container center">
-<h2>Você não precisa de mais uma dieta.</h2>
-<p>Muitas mulheres sabem exatamente o que deveriam fazer. O problema é manter a constância sem apoio, sem direção e sem alguém para caminhar junto.</p>
-</div>
-</section>
+        <nav class="nav-links">
+          <a href="#para-quem">Para quem é</a>
+          <a href="#clube">O Clube</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
 
-<section>
-<div class="container">
-<div class="cards">
-<div class="card"><h3>Recomeços constantes</h3><p>Começa motivada e para depois de alguns dias.</p></div>
-<div class="card"><h3>Falta de suporte</h3><p>Sozinha, tudo fica mais difícil.</p></div>
-<div class="card"><h3>Excesso de informação</h3><p>Cada semana surge uma nova dieta.</p></div>
-<div class="card"><h3>Resultados temporários</h3><p>Perde peso e depois recupera.</p></div>
-</div>
-</div>
-</section>
+        <a href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio" class="nav-cta">Entrar agora</a>
+      </div>
+    </div>
+  </header>
 
-<section class="dark">
-<div class="container center">
-<h2>O Clube Raquel Nutri</h2>
-<p>Um espaço pensado para mulheres que desejam emagrecer com leveza, orientação e acompanhamento contínuo.</p>
-</div>
-</section>
+  <main>
 
-<section>
-<div class="container">
-<div class="cards">
-<div class="card"><h3>Comunidade Exclusiva</h3><p>Ambiente de apoio e pertencimento.</p></div>
-<div class="card"><h3>Conteúdo Recorrente</h3><p>Novas orientações e estratégias.</p></div>
-<div class="card"><h3>Mais Constância</h3><p>Menos efeito sanfona.</p></div>
-<div class="card"><h3>Estilo de Vida</h3><p>Mudanças sustentáveis e possíveis.</p></div>
-<div class="card"><h3>Emagrecimento Inteligente</h3><p>Sem extremismos.</p></div>
-<div class="card"><h3>Acompanhamento</h3><p>Você não caminha sozinha.</p></div>
-</div>
-</div>
-</section>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="blob" style="top:-120px;right:-120px;"></div>
+      <div class="blob green" style="bottom:-150px;left:-160px;"></div>
 
-<section class="dark">
-<div class="container center">
-<h2>Sobre Raquel Araújo</h2>
-<p>Nutricionista que construiu uma marca baseada em acolhimento, constância e transformação sustentável. O foco não está em soluções rápidas, mas em resultados que façam sentido para a vida real.</p>
-</div>
-</section>
+      <div class="container">
+        <div class="hero-grid">
 
-<section>
-<div class="container center">
-<h2>O que as alunas procuram</h2>
-<div class="cards" style="margin-top:30px">
-<div class="card">Mais confiança nas escolhas.</div>
-<div class="card">Menos culpa com a alimentação.</div>
-<div class="card">Mais consistência.</div>
-<div class="card">Resultados duradouros.</div>
-</div>
-</div>
-</section>
+          <div>
+            <span class="tag">Comunidade Premium de Emagrecimento</span>
 
-<section class="dark">
-<div class="container center">
-<h2>Faça parte hoje</h2>
-<p>Acesso à comunidade Clube Raquel Nutri</p>
-<div class="price">4x R$16,31</div>
-<p>ou R$59,90 à vista</p><br>
-<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">ENTRAR NO CLUBE</a>
-</div>
-</section>
+            <h1>
+              Pare de recomeçar toda <span>segunda-feira</span>.
+            </h1>
 
-<section class="faq">
-<div class="container">
-<h2 class="center">Perguntas Frequentes</h2>
-<details><summary>É para iniciantes?</summary><p>Sim.</p></details>
-<details><summary>Quanto custa?</summary><p>4x de R$16,31 ou R$59,90 à vista.</p></details>
-<details><summary>Recebo acesso imediato?</summary><p>Após confirmação do pagamento.</p></details>
-<details><summary>Preciso seguir dieta restritiva?</summary><p>Não.</p></details>
-</div>
-</section>
+            <p>
+              Tenha acompanhamento, direcionamento e uma comunidade que ajuda você a construir resultados possíveis de manter, sem dieta maluca e sem caminhar sozinha.
+            </p>
 
-<section class="cta">
-<div class="container center">
-<h2>Seu próximo recomeço pode ser o último.</h2>
-<p>Construa resultados possíveis de manter.</p><br>
-<a class="btn" href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio">QUERO ENTRAR AGORA</a>
-</div>
-</section>
+            <div class="hero-actions">
+              <a href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio" class="btn">Quero fazer parte</a>
+              <a href="#clube" class="btn btn-secondary">Ver como funciona</a>
+            </div>
 
-<footer>Clube Raquel Nutri</footer>
+            <div class="hero-proof">
+              <div class="proof">
+                <strong>Comunidade exclusiva</strong>
+                <span>ambiente de apoio e pertencimento</span>
+              </div>
+
+              <div class="proof">
+                <strong>Mais constância</strong>
+                <span>menos recomeços e menos efeito sanfona</span>
+              </div>
+
+              <div class="proof">
+                <strong>Emagrecimento leve</strong>
+                <span>estratégia sem extremismos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-wrap">
+            <div class="product-card">
+              <img src="clube-raquel.jpg" alt="Clube Raquel Nutri">
+            </div>
+
+            <div class="floating-card">
+              <strong>Seu próximo recomeço pode ser o último</strong>
+              <span>Um clube para construir constância, direção e resultados sustentáveis.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="para-quem">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Para quem é</span>
+          <h2 class="title">Você não precisa de mais uma <span>dieta</span>.</h2>
+          <p class="subtitle">
+            Muitas mulheres sabem exatamente o que deveriam fazer. O problema é manter a constância sem apoio, sem direção e sem alguém para caminhar junto.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card pain-card">
+            <div class="icon">🔁</div>
+            <h3>Recomeços constantes</h3>
+            <p>
+              Você começa motivada, passa alguns dias seguindo tudo e depois sente que perdeu o controle de novo.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🤍</div>
+            <h3>Falta de suporte</h3>
+            <p>
+              Sozinha, tudo fica mais difícil. Ter apoio e direção muda a forma como você continua.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">📲</div>
+            <h3>Excesso de informação</h3>
+            <p>
+              Cada semana aparece uma nova dieta, uma nova regra e uma nova promessa impossível de manter.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">⚖️</div>
+            <h3>Resultados temporários</h3>
+            <p>
+              Você perde peso, mas depois recupera porque o processo não se transforma em estilo de vida.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🍫</div>
+            <h3>Culpa com a alimentação</h3>
+            <p>
+              Você quer emagrecer, mas também quer parar de viver presa entre culpa, restrição e exagero.
+            </p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🎯</div>
+            <h3>Falta de direção</h3>
+            <p>
+              Você até tenta fazer certo, mas sente falta de um caminho claro para seguir com consistência.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLUBE -->
+    <section class="dark-section" id="clube">
+      <div class="container">
+        <div class="split">
+          <div class="copy">
+            <span class="tag">O Clube Raquel Nutri</span>
+
+            <h2 class="title">
+              Um espaço para emagrecer com leveza, orientação e <span>continuidade</span>.
+            </h2>
+
+            <p class="subtitle">
+              O Clube Raquel Nutri foi pensado para mulheres que desejam construir resultados reais, com mais apoio, mais clareza e menos extremismos.
+            </p>
+
+            <div class="dark-grid">
+              <div class="dark-card">
+                <h3>Comunidade exclusiva</h3>
+                <p>Ambiente de apoio, pertencimento e incentivo para você não caminhar sozinha.</p>
+              </div>
+
+              <div class="dark-card">
+                <h3>Conteúdo recorrente</h3>
+                <p>Novas orientações e estratégias para aplicar na sua rotina alimentar.</p>
+              </div>
+
+              <div class="dark-card">
+                <h3>Mais constância</h3>
+                <p>Um processo para reduzir os recomeços e construir hábitos possíveis.</p>
+              </div>
+
+              <div class="dark-card">
+                <h3>Estilo de vida</h3>
+                <p>Mudanças sustentáveis, leves e possíveis para sua vida real.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-box">
+            <img src="clube-raquel.jpg" alt="Comunidade Clube Raquel Nutri">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="section-soft" id="metodo">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Como funciona</span>
+          <h2 class="title">Mais acompanhamento, mais direção e menos efeito sanfona.</h2>
+          <p class="subtitle">
+            O clube te ajuda a sair do ciclo de começar, parar e se frustrar. Aqui o foco é constância, apoio e construção de um estilo de vida sustentável.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="card step">
+            <strong>01</strong>
+            <h3>Você entra no clube</h3>
+            <p>Após a inscrição, você recebe acesso à comunidade e aos direcionamentos disponíveis.</p>
+          </div>
+
+          <div class="card step">
+            <strong>02</strong>
+            <h3>Recebe orientação</h3>
+            <p>Conteúdos e estratégias para melhorar suas escolhas e sua relação com a comida.</p>
+          </div>
+
+          <div class="card step">
+            <strong>03</strong>
+            <h3>Ganha suporte</h3>
+            <p>Um ambiente para se sentir acompanhada, acolhida e motivada a continuar.</p>
+          </div>
+
+          <div class="card step">
+            <strong>04</strong>
+            <h3>Constrói constância</h3>
+            <p>O objetivo é criar resultados possíveis de manter, sem depender de motivação passageira.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container">
+        <div class="split">
+
+          <div class="image-box">
+            <img src="expert.jpg" alt="Nutricionista Raquel Araújo">
+          </div>
+
+          <div class="copy">
+            <span class="tag">A nutricionista</span>
+            <h2 class="title">Raquel Araújo</h2>
+            <p class="subtitle">
+              Nutricionista que construiu uma marca baseada em acolhimento, constância e transformação sustentável. O foco não está em soluções rápidas, mas em resultados que façam sentido para a vida real.
+            </p>
+
+            <div class="bullets">
+              <div class="bullet"><b>✓</b> Emagrecimento inteligente, sem extremismos.</div>
+              <div class="bullet"><b>✓</b> Construção de constância e estilo de vida.</div>
+              <div class="bullet"><b>✓</b> Orientação para mulheres que cansaram de recomeçar.</div>
+              <div class="bullet"><b>✓</b> Mais confiança nas escolhas e menos culpa com a alimentação.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTADOS DESEJADOS -->
+    <section>
+      <div class="container">
+        <div class="center">
+          <span class="tag">O que as alunas procuram</span>
+          <h2 class="title">O objetivo é emagrecer sem perder a leveza.</h2>
+          <p class="subtitle">
+            O Clube Raquel Nutri é para quem quer transformar a alimentação em algo mais simples, consciente e possível de manter.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card pain-card">
+            <div class="icon">✨</div>
+            <h3>Mais confiança nas escolhas</h3>
+            <p>Aprenda a tomar melhores decisões sem depender de regras impossíveis.</p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🕊️</div>
+            <h3>Menos culpa com a alimentação</h3>
+            <p>Construa uma relação mais leve com a comida, sem viver presa ao tudo ou nada.</p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">📌</div>
+            <h3>Mais consistência</h3>
+            <p>Tenha apoio para continuar mesmo quando a motivação diminuir.</p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🏆</div>
+            <h3>Resultados duradouros</h3>
+            <p>O foco é emagrecer de um jeito possível de manter na vida real.</p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">🥗</div>
+            <h3>Estilo de vida</h3>
+            <p>Menos dieta temporária, mais hábitos sustentáveis e aplicáveis.</p>
+          </div>
+
+          <div class="card pain-card">
+            <div class="icon">👭</div>
+            <h3>Pertencimento</h3>
+            <p>Você entra em um ambiente criado para mulheres com o mesmo objetivo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREÇO -->
+    <section class="section-soft" id="preco">
+      <div class="container">
+        <div class="price-box">
+          <span class="tag">Faça parte hoje</span>
+
+          <h2 class="title" style="margin-top:20px;">
+            Acesso à comunidade Clube Raquel Nutri
+          </h2>
+
+          <p class="subtitle" style="margin:20px auto 0;">
+            Entre hoje e comece a construir constância, suporte e resultados possíveis de manter.
+          </p>
+
+          <div class="price">
+            4x R$16,31
+            <small>ou R$59,90 à vista</small>
+          </div>
+
+          <p class="price-note">
+            Acesso liberado após confirmação do pagamento.
+          </p>
+
+          <a href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio" class="btn">Entrar no clube</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="duvidas">
+      <div class="container">
+        <div class="center">
+          <span class="tag">Dúvidas frequentes</span>
+          <h2 class="title">Antes de entrar</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>É para iniciantes?</summary>
+            <p>Sim. O clube é para mulheres que querem emagrecer com mais orientação, apoio e constância, mesmo que estejam começando agora.</p>
+          </details>
+
+          <details>
+            <summary>Quanto custa?</summary>
+            <p>O acesso custa 4x de R$16,31 ou R$59,90 à vista.</p>
+          </details>
+
+          <details>
+            <summary>Recebo acesso imediato?</summary>
+            <p>Sim. Após a confirmação do pagamento, você recebe as orientações para acessar o Clube Raquel Nutri.</p>
+          </details>
+
+          <details>
+            <summary>Preciso seguir dieta restritiva?</summary>
+            <p>Não. A proposta é emagrecimento inteligente, com mudanças sustentáveis e possíveis para a vida real.</p>
+          </details>
+
+          <details>
+            <summary>Para quem é o Clube Raquel Nutri?</summary>
+            <p>Para mulheres que cansaram de recomeçar, querem mais constância e desejam emagrecer com leveza, suporte e direção.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <span class="tag">Comece agora</span>
+
+          <h2 class="title">
+            Seu próximo recomeço pode ser o <span>último</span>.
+          </h2>
+
+          <p class="subtitle">
+            Construa resultados possíveis de manter com direcionamento, comunidade e apoio para continuar.
+          </p>
+
+          <a href="https://pay.kiwify.com.br/IfjDrZY?utm_source=ig&utm_medium=social&utm_content=link_in_bio" class="btn">Quero entrar agora</a>
+
+          <div class="cta-note">
+            Clube Raquel Nutri • Comunidade premium • Emagrecimento com constância
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Clube Raquel Nutri</div>
+          <p>Comunidade premium de emagrecimento com leveza, direção e constância.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#para-quem">Para quem é</a>
+          <a href="#clube">O Clube</a>
+          <a href="#preco">Entrar</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Clube Raquel Nutri. Todos os direitos reservados.</p>
+        <p class="credit">Feito por DORYAN</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
